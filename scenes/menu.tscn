@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://crbdgulou31aj"]
+
+[ext_resource type="Texture2D" uid="uid://db7xbdxt1il8x" path="res://images/title.png" id="1_con2f"]
+[ext_resource type="Script" uid="uid://rcjtu2rwpqyk" path="res://scripts/main_menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://dp7nc37bwls8p" path="res://images/button.png" id="2_mhnvy"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_con2f")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 863.0
+offset_top = 540.0
+offset_right = 987.0
+offset_bottom = 589.0
+icon = ExtResource("2_mhnvy")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_yqeox")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
