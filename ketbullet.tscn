@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx407icsgt2dc"]
+
+[ext_resource type="Script" uid="uid://ngfhlklexa2a" path="res://ketbullet.gd" id="1_egp25"]
+[ext_resource type="Texture2D" uid="uid://cqlcy658gmym4" path="res://images/ketchup_bust.png" id="2_xghvm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_egp25"]
+radius = 21.0238
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_egp25")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("2_xghvm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_egp25")

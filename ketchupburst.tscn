@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgc65a35f6xbm"]
+
+[ext_resource type="Script" uid="uid://bhlolxxq1cxpv" path="res://bullet.gd" id="1_73m37"]
+[ext_resource type="Texture2D" uid="uid://cqlcy658gmym4" path="res://images/ketchup_bust.png" id="2_iimin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbbxu"]
+size = Vector2(86, 66)
+
+[node name="burst" type="Area2D"]
+script = ExtResource("1_73m37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_jbbxu")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(2, 5)
+scale = Vector2(2, 2)
+texture = ExtResource("2_iimin")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

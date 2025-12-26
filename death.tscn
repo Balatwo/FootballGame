@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://nci48w3rufax"]
+
+[ext_resource type="Script" uid="uid://hpnd3al71p5o" path="res://deadScreen.gd" id="1_531me"]
+[ext_resource type="Texture2D" uid="uid://dyh437ph183s8" path="res://images/death.png" id="1_qemge"]
+[ext_resource type="Texture2D" uid="uid://c248ci11tunit" path="res://images/geewhilickers.png" id="3_4868a"]
+[ext_resource type="Texture2D" uid="uid://w02ylut0lb8i" path="res://images/geewhilickers_quit.png" id="4_4868a"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_531me")
+
+[node name="Death" type="Sprite2D" parent="."]
+position = Vector2(960, 543)
+texture = ExtResource("1_qemge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 750.0
+offset_top = 810.0
+offset_right = 1233.0
+offset_bottom = 930.0
+theme_override_constants/separation = 67
+
+[node name="title" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_4868a")
+
+[node name="quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_4868a")
+
+[node name="FinalScoreLabel" type="Label" parent="."]
+offset_left = 700.0
+offset_top = 450.0
+offset_right = 1100.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+
+[connection signal="pressed" from="HBoxContainer/title" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]
